@@ -32,14 +32,22 @@ console.log("Mi nombre es " + nombre); */
 
 //Cuarto Desafio
 
-function edadPromedio() {
-    const edad1=parseInt(prompt("Cual es tu edad?"));
-    const edad2=parseInt(prompt("Cual es tu edad?"));
-    const edad3=parseInt(prompt("Cual es tu edad?"));
-    const edad4=parseInt(prompt("Cual es tu edad?"));
-    const edad5=parseInt(prompt("Cual es tu edad?"));
+// function edadPromedio() {
+//     const edad1=parseInt(prompt("Cual es tu edad?"));
+//     const edad2=parseInt(prompt("Cual es tu edad?"));
+//     const edad3=parseInt(prompt("Cual es tu edad?"));
+//     const edad4=parseInt(prompt("Cual es tu edad?"));
+//     const edad5=parseInt(prompt("Cual es tu edad?"));
 
-    alert(Math.round(edad1+edad2+edad3+edad4+edad5)/5);
+//     alert(Math.round(edad1+edad2+edad3+edad4+edad5)/5);
+// }
+
+// edadPromedio();
+
+function calcularIva() {
+    let costo = parseInt(prompt('¿Cuál es el costo?'));
+    let iva = costo * 0.21;
+    alert(`El IVA es de ${iva}`);
 }
 
-edadPromedio();
+calcularIva();
