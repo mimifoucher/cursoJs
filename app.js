@@ -44,10 +44,43 @@ console.log("Mi nombre es " + nombre); */
 
 // edadPromedio();
 
-function calcularIva() {
-    let costo = parseInt(prompt('¿Cuál es el costo?'));
-    let iva = costo * 0.21;
-    alert(`El IVA es de ${iva}`);
+// function calcularIva() {
+//     let costo = parseInt(prompt('¿Cuál es el costo?'));
+//     let iva = costo * 0.21;
+//     alert(`El IVA es de ${iva}`);
+// }
+
+// calcularIva();
+
+
+
+//Desafío Cinco
+
+class Alumne {
+    constructor(nombre,nota1,nota2,nota3){
+        this.nombre=nombre;
+        this.nota1=parseInt(nota1);
+        this.nota2=parseInt(nota2);
+        this.nota3=parseInt(nota3);
+    }
+
+    promedioNotas(){
+        const notaFinal=(this.nota1 + this.nota2 + this.nota3) / 3;
+        console.log(`El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`);
+
+        return `El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`;
+    }
+
+}
+  
+function crearAlumne(){
+
+    const nombre = prompt('Cual es tu nombre?');
+    const nota1 = prompt('Cual es tu primer nota?');
+    const nota2 = prompt('Cual es tu segunda nota?');
+    const nota3 = prompt('Cual es tu tercera nota?');
+
+    return new Alumne (nombre, nota1, nota2, nota3);
 }
 
-calcularIva();
+crearAlumne().promedioNotas();
