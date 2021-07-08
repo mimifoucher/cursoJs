@@ -71,53 +71,83 @@ console.log("Mi nombre es " + nombre); */
 // mostrarPrecio();
 
 
-const mostrarPrecio = () => {
-    let costo;
-    let iva
-    const recibirCosto = () => {
-        costo = parseInt(prompt('¿Cuál es el costo?'));
-        return costo;
+// const mostrarPrecio = () => {
+//     let costo;
+//     let iva
+//     const recibirCosto = () => {
+//         costo = parseInt(prompt('¿Cuál es el costo?'));
+//         return costo;
+//     }
+//     const calcularIva = () => {
+//         iva = costo * 0.21;
+//         return iva;
+//     }
+//     recibirCosto();
+//     calcularIva();
+//     return alert(`El IVA es de ${iva}`);
+// }
+
+
+// mostrarPrecio();
+
+
+//Desafío Cinco
+
+class Alumne {
+    constructor(nombre,nota1,nota2,nota3){
+        this.nombre=nombre;
+        this.nota1=parseInt(nota1);
+        this.nota2=parseInt(nota2);
+        this.nota3=parseInt(nota3);
     }
-    const calcularIva = () => {
-        iva = costo * 0.21;
-        return iva;
+
+    promedioNotas(){
+        const notaFinal=(this.nota1 + this.nota2 + this.nota3) / 3;
+        // console.log(`El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`);
+        console.log(notaFinal);
+        return notaFinal;
+    //     return `El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`;
+    // 
     }
-    recibirCosto();
-    calcularIva();
-    return alert(`El IVA es de ${iva}`);
+
+}
+  
+function crearAlumne(){
+
+    const nombre = prompt('Cual es tu nombre?');
+    const nota1 = prompt('Cual es tu primer nota?');
+    const nota2 = prompt('Cual es tu segunda nota?');
+    const nota3 = prompt('Cual es tu tercera nota?');
+
+    return new Alumne (nombre, nota1, nota2, nota3);
 }
 
 
-mostrarPrecio();
+
+const alumne1 = crearAlumne();
+const alumne2 = crearAlumne();
+const alumne3 = crearAlumne();
+
+const notaAlumne1 = alumne1.promedioNotas();
+const notaAlumne2 = alumne2.promedioNotas();
+const notaAlumne3 = alumne3.promedioNotas();
+
+let promedioClase = [];
+
+function promedioTotal(promedios){
+    let resultado = 0;
+    promedios.forEach(promedio => {
+        resultado = resultado+promedio;
+    });
+    console.log(resultado / 3);
+}
+
+promedioClase.push(notaAlumne1,notaAlumne2,notaAlumne3);
 
 
-// //Desafío Cinco
 
-// class Alumne {
-//     constructor(nombre,nota1,nota2,nota3){
-//         this.nombre=nombre;
-//         this.nota1=parseInt(nota1);
-//         this.nota2=parseInt(nota2);
-//         this.nota3=parseInt(nota3);
-//     }
 
-//     promedioNotas(){
-//         const notaFinal=(this.nota1 + this.nota2 + this.nota3) / 3;
-//         console.log(`El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`);
+console.log(promedioTotal(promedioClase));
 
-//         return `El alumne ${this.nombre} obtiene un promedio de ${notaFinal}`;
-//     }
 
-// }
-  
-// function crearAlumne(){
 
-//     const nombre = prompt('Cual es tu nombre?');
-//     const nota1 = prompt('Cual es tu primer nota?');
-//     const nota2 = prompt('Cual es tu segunda nota?');
-//     const nota3 = prompt('Cual es tu tercera nota?');
-
-//     return new Alumne (nombre, nota1, nota2, nota3);
-// }
-
-// crearAlumne().promedioNotas();
